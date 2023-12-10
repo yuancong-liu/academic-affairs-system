@@ -7,14 +7,16 @@ export default defineNuxtConfig({
     storybookRoute: "/__storybook__",
     port: 6006,
   },
-  build: {},
   components: [
     {
       path: "~/components",
       extensions: ["vue"],
     },
   ],
-  css: ["~/assets/scss/base.scss"],
+  css: ["~/assets/scss/base.css"],
+  webpack: {
+    cssSourceMap: true,
+  },
   vite: {
     css: {
       preprocessorOptions: {
