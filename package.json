@@ -54,9 +54,5 @@
   },
   "dependencies": {
     "reset-css": "^5.0.2"
-  },
-  "sideEffects": [
-    "**/*.scss",
-    "**/*.css"
-  ]
+  }
 }

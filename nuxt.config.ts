@@ -14,11 +14,12 @@ export default defineNuxtConfig({
       extensions: ["vue"],
     },
   ],
+  css: ["~/assets/scss/base.scss"],
   vite: {
     css: {
       preprocessorOptions: {
         scss: {
-          additionalData: `@import "~/assets/scss/variables.scss"; @import "~/assets/scss/base.scss";`,
+          additionalData: `@import "~/assets/scss/variables.scss";`,
         },
       },
     },
