@@ -1,6 +1,6 @@
-import type { Meta, StoryObj } from '@storybook/vue3';
+import type { Meta, StoryObj } from "@storybook/vue3";
 
-import Button from './index.vue';
+import Button from "./index.vue";
 
 const meta: Meta<typeof Button> = {
   component: Button,
@@ -9,5 +9,4 @@ const meta: Meta<typeof Button> = {
 export default meta;
 type Story = StoryObj<typeof Button>;
 
-export const Primary: Story = {
-};
+export const Primary: Story = {};

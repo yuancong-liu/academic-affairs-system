@@ -7,4 +7,10 @@ export default defineNuxtConfig({
     storybookRoute: "/__storybook__",
     port: 6006,
   },
+  components: [
+    {
+      path: "~/components",
+      pathPrefix: false,
+    },
+  ],
 });
