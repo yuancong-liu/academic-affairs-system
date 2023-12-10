@@ -1,30 +1,57 @@
 <template>
   <button @click="$emit('click')" class="button">
     <span>
-      <slot>hello</slot>
+      <slot>{{ label }}</slot>
     </span>
   </button>
 </template>
 
 <script lang="ts" setup>
 const props = defineProps({
+  /**
+   * The label of the button
+   * @default button
+   */
   label: {
     type: String,
-    default: 'button',
+    default: "button",
   },
+  /**
+   * The type of the button
+   * @default button
+   */
   type: {
     type: String,
-    default: 'button',
+    default: "button",
   },
+  /**
+   * The disabled state of the button
+   * @default false
+   */
   disabled: {
     type: Boolean,
     default: false,
   },
-})
+});
 </script>
 
 <style lang="scss" scoped>
 .button {
+  color: $white;
+  background-color: $surface-blue;
   border: none;
+  font-weight: 600;
+  font-size: 1.6rem;
+  padding: $spacing-8 0;
+  border-radius: $border-radius-infinite;
+  min-width: 256px;
+  border: $stroke-width-2 solid $surface-blue;
+  transition: all 0.1s ease-in-out;
+
+  &:hover {
+    cursor: pointer;
+    background-color: $white;
+    color: $surface-blue;
+  }
 }
 </style>

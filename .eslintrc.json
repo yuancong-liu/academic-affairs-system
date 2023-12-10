@@ -14,12 +14,12 @@
       "error",
       {
         "groups": [
-          "builtin", // 組み込みモジュール
-          "external", // yarn add したパッケージ
-          "internal", // 自作モジュール
-          "parent", // 親階層のファイル
-          "sibling", // 同階層のファイル
-          "index" // 同階層の index ファイル
+          "builtin",
+          "external",
+          "internal",
+          "parent",
+          "sibling",
+          "index"
         ],
         "alphabetize": {
           "order": "asc",

@@ -1,0 +1,47 @@
+@import 'reset-css';
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@400;600&display=swap');
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  font-family: 'Jost', sans-serif;
+}
+
+html {
+  font-size: 10px;
+  -webkit-font-smoothing: antialiased;
+  text-size-adjust: 100%;
+}
+
+body {
+  position: relative;
+  line-height: 1.5;
+  color: $main-black;
+}
+
+a {
+  text-decoration: none;
+}
+
+input,
+button,
+textarea {
+  -webkit-appearance: none;
+  appearance: none;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+button {
+  padding: 0;
+  background: none;
+  border: none;
+}
+
+button:focus,
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+}

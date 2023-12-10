@@ -13,4 +13,14 @@ export default defineNuxtConfig({
       pathPrefix: false,
     },
   ],
+  css: ["~/assets/scss/base.scss"],
+  vite: {
+    css: {
+      preprocessorOptions: {
+        scss: {
+          additionalData: `@import "~/assets/scss/variables.scss";`,
+        },
+      },
+    },
+  },
 });
