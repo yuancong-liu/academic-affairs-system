@@ -13,7 +13,7 @@ const config: StorybookConfig = {
     options: {},
   },
   docs: {
-    autodocs: "tag",
+    autodocs: true,
   },
   async viteFinal(config) {
     config.css.preprocessorOptions = {

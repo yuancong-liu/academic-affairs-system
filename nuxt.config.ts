@@ -10,7 +10,7 @@ export default defineNuxtConfig({
   components: [
     {
       path: "~/components",
-      pathPrefix: false,
+      extensions: ["vue"],
     },
   ],
   css: ["~/assets/scss/base.scss"],
