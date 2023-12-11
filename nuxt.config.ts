@@ -13,9 +13,9 @@ export default defineNuxtConfig({
       extensions: ["vue"],
     },
   ],
-  css: ["~/assets/scss/base.css"],
-  webpack: {
-    cssSourceMap: true,
+  css: ["~/assets/scss/base.scss"],
+  experimental: {
+    inlineSSRStyles: false,
   },
   vite: {
     css: {
