@@ -18,7 +18,7 @@ const config: StorybookConfig = {
   async viteFinal(config) {
     config.css.preprocessorOptions = {
       scss: {
-        additionalData: `@import "~/assets/scss/variables.scss"; @import "~/assets/scss/base.scss";`,
+        additionalData: `@import "~/assets/scss/variables.scss";`,
       },
     };
     return config;
