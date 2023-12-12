@@ -1,6 +1,5 @@
 <template>
   <div>
-    <p class="p">Hello world!</p>
     <Button @click="() => console.log('clicked!')">Click me!</Button>
   </div>
 </template>

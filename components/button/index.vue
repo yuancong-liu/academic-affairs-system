@@ -37,14 +37,13 @@ const props = defineProps({
 
 <style lang="scss" scoped>
 .button {
+  padding: $spacing-8 0;
+  min-width: 256px;
   color: $white;
-  background-color: $surface-blue;
   border: none;
   font-weight: 600;
-  font-size: 1.6rem;
-  padding: $spacing-8 0;
+  background-color: $surface-blue;
   border-radius: $border-radius-infinite;
-  min-width: 256px;
   border: $stroke-width-2 solid $surface-blue;
   transition: all 0.1s ease-in-out;
 
