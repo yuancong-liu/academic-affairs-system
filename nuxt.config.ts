@@ -1,7 +1,19 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  modules: ["@storybook-vue/nuxt-storybook"],
+  modules: [
+    "@storybook-vue/nuxt-storybook",
+    "@vee-validate/nuxt",
+  ],
+  veeValidate: {
+    autoImports: true,
+    componentNames: {
+      Form: "VForm",
+      Field: "VField",
+      FieldArray: "VFieldArray",
+      ErrorMessage: "VErrorMessage",
+    },
+  },
   storybook: {
     url: "http://localhost:6006",
     storybookRoute: "/__storybook__",

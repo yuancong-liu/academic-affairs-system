@@ -5,25 +5,43 @@
       <p class="instruction">
         This is a fake login page so just type something and hit the button!
       </p>
-      <form @submit.prevent="onLogin" class="form">
-        <TextField placeholder="Username" name="username" />
+      <VForm @submit.prevent="onLogin" class="form">
         <TextField
+          v-model="username"
+          v-bind="usernameAttr"
+          placeholder="Username"
+          name="username"
+          :error="errors.username"
+        />
+        <TextField
+          type="password"
+          v-model="password"
+          v-bind="passwordAttr"
           placeholder="Password"
           name="password"
-          :type="passwordInputType"
+          :error="errors.password"
         />
+        <Button type="submit">LOGIN</Button>
         <div class="reset-link">
           <NuxtLink class="link" to="/reset">Forgot password?</NuxtLink>
         </div>
-        <Button type="submit">LOGIN</Button>
-      </form>
+      </VForm>
     </div>
   </main>
 </template>
 
 <script lang="ts" setup>
-import { ref } from "vue";
-const passwordInputType = ref<string>("password");
+import { useForm } from "#imports";
+import * as yup from "yup";
+
+const { errors, defineField } = useForm({
+  validationSchema: yup.object({
+    username: yup.string().required(),
+    password: yup.string().required(),
+  }),
+});
+const [username, usernameAttr] = defineField("username");
+const [password, passwordAttr] = defineField("password");
 
 const onLogin = (event: Event) => {
   console.log(event);
@@ -60,7 +78,7 @@ const onLogin = (event: Event) => {
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap: $spacing-16;
+    gap: $spacing-8;
   }
 }
 .reset-link {

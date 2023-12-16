@@ -3,9 +3,13 @@
     <input
       :type="type"
       :placeholder="placeholder"
-      @input="$emit('input', $event.target.value)"
+      :value="modelValue"
+      @input="$emit('update:modelValue', $event.target.value)"
+      @blur="$emit('blur')"
       class="text-field"
+      :class="{ '-error': !!error }"
     />
+    <p class="error-message">{{ error ?? "&zwnj;" }}</p>
   </div>
 </template>
 
@@ -27,29 +31,43 @@ const props = defineProps({
     type: String,
     default: "",
   },
+  modelValue: String,
+  error: String,
 });
 </script>
 
 <style lang="scss" scoped>
 .input-wrapper {
-  border-bottom: $stroke-width-1 solid $color-text-secondary;
-  padding: $spacing-8;
   width: 100%;
-  transition: all 0.1s ease-in-out;
-
-  &:focus-within {
-    border-bottom: $stroke-width-1 solid $color-text-primary;
-  }
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-4;
 }
 
 .text-field {
   border: 0;
+  border-bottom: $stroke-width-1 solid $color-text-secondary;
+  padding: $spacing-8;
   width: 100%;
   font-size: 16px;
+
+  &:focus {
+    border-bottom: $stroke-width-1 solid $color-text-primary;
+  }
+
+  &.-error {
+    border-bottom: $stroke-width-1 solid $color-error;
+  }
 
   &::-webkit-input-placeholder {
     color: $color-text-secondary;
     padding-inline-start: $spacing-4;
   }
+}
+
+.error-message {
+  color: $color-error;
+  line-height: 1;
+  text-align: end;
 }
 </style>

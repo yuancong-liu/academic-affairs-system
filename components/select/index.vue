@@ -33,6 +33,10 @@ const props = defineProps<{
    * @default ""
    */
   name: string;
+  /**
+   * The options of the select
+   * @default []
+   */
   options: Option[];
   /**
    * The disabled state of the select
