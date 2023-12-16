@@ -4,4 +4,10 @@
   </div>
 </template>
 
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+import { definePageMeta } from "#imports";
+
+definePageMeta({
+  title: "Home",
+});
+</script>

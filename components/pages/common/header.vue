@@ -11,10 +11,13 @@
 
 <style lang="scss" scoped>
 .header-wrapper {
+  position: fixed;
+  top: 0;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 48px;
+  height: 56px;
   background-color: $color-surface-primary;
   padding: $spacing-8;
   border-bottom: $stroke-width-1 solid $color-surface-secondary;
