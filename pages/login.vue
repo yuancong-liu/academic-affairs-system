@@ -21,7 +21,7 @@
           name="password"
           :error="errors.password"
         />
-        <Button type="submit" :disabled="!isFormValid" >LOGIN</Button>
+        <Button type="submit" :disabled="!isFormValid">LOGIN</Button>
         <div class="reset-link">
           <NuxtLink class="link" to="/reset">Forgot password?</NuxtLink>
         </div>
@@ -33,14 +33,9 @@
 <script lang="ts" setup>
 import { computed, useForm, useRouter, login } from "#imports";
 import * as yup from "yup";
-
 const router = useRouter();
 
-const {
-  errors,
-  defineField,
-  meta
-} = useForm({
+const { errors, defineField, meta } = useForm({
   validationSchema: yup.object({
     username: yup.string().required(),
     password: yup.string().required(),
@@ -51,7 +46,7 @@ const [password, passwordAttr] = defineField("password");
 
 const isFormValid = computed(() => meta.value.valid && meta.value.touched);
 
-const onLogin = (event: Event) => {
+const onLogin = () => {
   login();
   router.push("/");
 };
