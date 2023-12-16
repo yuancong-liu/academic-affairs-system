@@ -21,7 +21,7 @@
           name="password"
           :error="errors.password"
         />
-        <Button type="submit">LOGIN</Button>
+        <Button type="submit" :disabled="!isFormValid" >LOGIN</Button>
         <div class="reset-link">
           <NuxtLink class="link" to="/reset">Forgot password?</NuxtLink>
         </div>
@@ -31,12 +31,16 @@
 </template>
 
 <script lang="ts" setup>
-import { useForm, useRouter } from "#imports";
+import { computed, useForm, useRouter, login } from "#imports";
 import * as yup from "yup";
 
 const router = useRouter();
 
-const { errors, defineField } = useForm({
+const {
+  errors,
+  defineField,
+  meta
+} = useForm({
   validationSchema: yup.object({
     username: yup.string().required(),
     password: yup.string().required(),
@@ -45,9 +49,10 @@ const { errors, defineField } = useForm({
 const [username, usernameAttr] = defineField("username");
 const [password, passwordAttr] = defineField("password");
 
+const isFormValid = computed(() => meta.value.valid && meta.value.touched);
+
 const onLogin = (event: Event) => {
-  localStorage.removeItem("token");
-  localStorage.setItem("token", "fake-token");
+  login();
   router.push("/");
 };
 </script>
@@ -66,10 +71,15 @@ const onLogin = (event: Event) => {
   flex-direction: column;
   align-items: center;
   gap: $spacing-16;
-  width: 400px;
+  width: 100%;
+  max-width: 400px;
   padding: $spacing-32;
   border-radius: $border-radius-4;
   background-color: $color-surface-primary;
+
+  @include sp() {
+    max-width: calc(100vw - 2 * $spacing-16);
+  }
 
   > .title {
     font-size: $font-size-32;

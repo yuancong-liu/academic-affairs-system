@@ -1,5 +1,10 @@
 <template>
-  <button @click="$emit('click')" class="button">
+  <button
+    @click="$emit('click')"
+    class="button"
+    :class="{ '-disabled': disabled }"
+    :disabled="disabled"
+  >
     <span>
       <slot>{{ label }}</slot>
     </span>
@@ -49,10 +54,16 @@ const props = defineProps({
   border: $stroke-width-2 solid $color-surface-primary-main;
   transition: all 0.1s ease-in-out;
 
-  &:hover {
+  &:not(:disabled):hover {
     cursor: pointer;
     background-color: $color-surface-primary;
     color: $color-surface-primary-main;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    background-color: $color-surface-secondary;
+    border-color: $color-surface-secondary;
   }
 }
 </style>

@@ -3,8 +3,7 @@ export default defineNuxtRouteMiddleware((to, from) => {
     to.path === "/login" || to.path.startsWith("/reset");
 
   if (accessibleUnauthorized) return true;
-  
-  if (!localStorage.getItem("token")) {
+
+  if (!localStorage || !localStorage.getItem("login_timestamp"))
     return { path: "/login" };
-  }
 });

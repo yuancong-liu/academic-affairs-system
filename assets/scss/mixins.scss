@@ -1,0 +1,12 @@
+@mixin sp {
+  @media (width <= 767px) {
+    @content;
+  }
+}
+
+@mixin pc {
+  @media (width >= 768px) {
+    @content;
+  }
+}
+
