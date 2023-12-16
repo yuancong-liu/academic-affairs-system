@@ -1,12 +1,12 @@
 <template>
   <div class="input-wrapper">
     <input
+      class="text-field"
       :type="type"
       :placeholder="placeholder"
       :value="modelValue"
       @input="$emit('update:modelValue', $event.target.value)"
       @blur="$emit('blur')"
-      class="text-field"
       :class="{ '-error': !!error }"
     />
     <p class="error-message">{{ error ?? "&zwnj;" }}</p>
