@@ -1,5 +1,6 @@
 <template>
   <div class="sidebar-wrapper">
+    <PagesCommonLogo />
     <div class="upper-part"></div>
     <div class="lower-part">
       <Button @click="logout">LOGOUT</Button>
@@ -18,8 +19,15 @@
   flex-shrink: 0;
   width: 256px;
   height: 100%;
-  padding: 0 $spacing-8 $spacing-16;
   background-color: $color-surface-primary;
   border-right: $stroke-width-1 solid $color-surface-secondary;
+}
+
+.upper-part,
+.lower-part {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-16;
+  padding: $spacing-16;
 }
 </style>

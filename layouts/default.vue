@@ -28,6 +28,7 @@ const title = route.meta.title;
 }
 
 .left-side {
+  height: 100%;
   flex-shrink: 0;
   width: 256px;
 
