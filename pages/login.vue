@@ -5,7 +5,7 @@
       <p class="instruction">
         This is a fake login page so just type something and hit the button!
       </p>
-      <VForm @submit.prevent="onLogin" class="form">
+      <VForm @submit="onLogin" class="form">
         <TextField
           v-model="username"
           v-bind="usernameAttr"
@@ -31,8 +31,10 @@
 </template>
 
 <script lang="ts" setup>
-import { useForm } from "#imports";
+import { useForm, useRouter } from "#imports";
 import * as yup from "yup";
+
+const router = useRouter();
 
 const { errors, defineField } = useForm({
   validationSchema: yup.object({
@@ -44,7 +46,9 @@ const [username, usernameAttr] = defineField("username");
 const [password, passwordAttr] = defineField("password");
 
 const onLogin = (event: Event) => {
-  console.log(event);
+  localStorage.removeItem("token");
+  localStorage.setItem("token", "fake-token");
+  router.push("/");
 };
 </script>
 
@@ -68,7 +72,7 @@ const onLogin = (event: Event) => {
   background-color: $color-surface-primary;
 
   > .title {
-    font-size: 32px;
+    font-size: $font-size-32;
     font-weight: 600;
     width: 100%;
     text-align: start;
@@ -85,7 +89,7 @@ const onLogin = (event: Event) => {
   width: 100%;
   display: flex;
   justify-content: flex-end;
-  font-size: 16px;
+  font-size: $font-size-16;
   color: $color-text-secondary;
 
   > .link {

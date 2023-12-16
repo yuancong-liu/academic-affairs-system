@@ -5,6 +5,7 @@ export default defineNuxtConfig({
     "@storybook-vue/nuxt-storybook",
     "@vee-validate/nuxt",
   ],
+  middleware: ["auth"],
   veeValidate: {
     autoImports: true,
     componentNames: {

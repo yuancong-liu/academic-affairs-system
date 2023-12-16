@@ -62,7 +62,7 @@ const value = ref<string>("");
   > .select {
     border: 0;
     width: 100%;
-    font-size: 16px;
+    font-size: $font-size-16;
   }
 
   > .select.-unselected {

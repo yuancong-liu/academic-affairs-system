@@ -49,7 +49,7 @@ const props = defineProps({
   border-bottom: $stroke-width-1 solid $color-text-secondary;
   padding: $spacing-8;
   width: 100%;
-  font-size: 16px;
+  font-size: $font-size-16;
 
   &:focus {
     border-bottom: $stroke-width-1 solid $color-text-primary;
@@ -67,6 +67,7 @@ const props = defineProps({
 
 .error-message {
   color: $color-error;
+  font-size: $font-size-14;
   line-height: 1;
   text-align: end;
 }

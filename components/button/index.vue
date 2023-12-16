@@ -43,7 +43,7 @@ const props = defineProps({
   color: $color-surface-primary;
   border: none;
   font-weight: 600;
-  font-size: 16px;
+  font-size: $font-size-16;
   background-color: $color-surface-primary-main;
   border-radius: $border-radius-infinite;
   border: $stroke-width-2 solid $color-surface-primary-main;
