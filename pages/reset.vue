@@ -9,7 +9,8 @@
 import { definePageMeta } from "#imports";
 
 definePageMeta({
-  layout: false,
+  layout: "non-logged-in",
+  title: "Reset Password",
 });
 </script>
 

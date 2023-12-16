@@ -3,13 +3,21 @@
     <div class="left-side">
       <div class="logo">LOGO</div>
     </div>
-    <div class="right-side">
+    <div class="right-side" :class="!loggedIn && `-non-logged-in`">
       <Button variant="text" @click="logout">logout</Button>
     </div>
   </header>
 </template>
 
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+type Props = {
+  loggedIn: boolean;
+}
+
+const props = withDefaults(defineProps<Props>(), {
+  loggedIn: true,
+});
+</script>
 
 <style lang="scss" scoped>
 .header-wrapper {
@@ -40,6 +48,10 @@
   flex-shrink: 0;
 
   @include pc() {
+    display: none;
+  }
+
+  &.-non-logged-in {
     display: none;
   }
 }
