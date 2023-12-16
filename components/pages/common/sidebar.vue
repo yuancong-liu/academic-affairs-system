@@ -1,5 +1,5 @@
 <template>
-  <div class="side-menu">
+  <div class="sidebar-wrapper">
     <div class="upper-part"></div>
     <div class="lower-part">
       <Button @click="logout">LOGOUT</Button>
@@ -10,7 +10,7 @@
 <script lang="ts" setup></script>
 
 <style lang="scss" scoped>
-.side-menu {
+.sidebar-wrapper {
   position: fixed;
   display: flex;
   flex-direction: column;

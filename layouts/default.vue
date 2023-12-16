@@ -1,7 +1,7 @@
 <template>
   <div class="page-wrapper">
     <div class="left-side">
-      <PagesCommonSideMenu />
+      <PagesCommonSidebar />
     </div>
     <main class="right-side">
       <PagesCommonHeader />
