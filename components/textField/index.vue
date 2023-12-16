@@ -5,9 +5,10 @@
       :type="type"
       :placeholder="placeholder"
       :value="modelValue"
+      :class="{ '-error': !!error, '-disabled': disabled }"
+      :disabled="disabled"
       @input="$emit('update:modelValue', $event.target.value)"
       @blur="$emit('blur')"
-      :class="{ '-error': !!error }"
     />
     <p class="error-message">{{ error ?? "&zwnj;" }}</p>
   </div>
@@ -33,6 +34,10 @@ const props = defineProps({
   },
   modelValue: String,
   error: String,
+  disabled: {
+    type: Boolean,
+    default: false,
+  },
 });
 </script>
 
@@ -57,6 +62,10 @@ const props = defineProps({
 
   &.-error {
     border-bottom: $stroke-width-1 solid $color-error;
+  }
+
+  &.-disabled {
+    cursor: not-allowed;
   }
 
   &::-webkit-input-placeholder {

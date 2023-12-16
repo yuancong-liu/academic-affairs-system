@@ -2,53 +2,36 @@
   <button
     @click="$emit('click')"
     class="button"
-    :class="{ '-disabled': disabled }"
+    :class="[{ '-disabled': disabled }, `-${variant}`]"
     :disabled="disabled"
   >
-    <span>
-      <slot>{{ label }}</slot>
-    </span>
+    <slot>{{ label }}</slot>
   </button>
 </template>
 
 <script lang="ts" setup>
-const props = defineProps({
-  /**
-   * The label of the button
-   * @default button
-   */
-  label: {
-    type: String,
-    default: "button",
-  },
-  /**
-   * The type of the button
-   * @default button
-   */
-  type: {
-    type: String,
-    default: "button",
-  },
-  /**
-   * The disabled state of the button
-   * @default false
-   */
-  disabled: {
-    type: Boolean,
-    default: false,
-  },
+type Props = {
+  label: string;
+  type?: string;
+  disabled?: boolean;
+  variant?: "filled" | "outlined" | "text";
+};
+
+const props = withDefaults(defineProps<Props>(), {
+  type: "button",
+  disabled: false,
+  variant: "filled",
 });
 </script>
 
 <style lang="scss" scoped>
 .button {
   padding: $spacing-8 0;
-  min-width: 256px;
   width: 100%;
   color: $color-surface-primary;
   border: none;
   font-weight: 600;
-  font-size: $font-size-16;
+  font-size: $font-size-14;
   background-color: $color-surface-primary-main;
   border-radius: $border-radius-infinite;
   border: $stroke-width-2 solid $color-surface-primary-main;
@@ -64,6 +47,37 @@ const props = defineProps({
     cursor: not-allowed;
     background-color: $color-surface-secondary;
     border-color: $color-surface-secondary;
+  }
+
+  &.-outlined {
+    background-color: $color-surface-primary;
+    color: $color-surface-primary-main;
+
+    &:not(:disabled):hover {
+      background-color: $color-surface-primary-main;
+      color: $color-surface-primary;
+    }
+
+    &:disabled {
+      color: $color-text-secondary;
+    }
+  }
+
+  &.-text {
+    height: fit-content;
+    width: fit-content;
+    padding: 0 $spacing-8;
+    background-color: transparent;
+    color: $color-surface-primary-main;
+    border: none;
+
+    &:not(:disabled):hover {
+      text-decoration: underline;
+    }
+
+    &:disabled {
+      color: $color-text-secondary;
+    }
   }
 }
 </style>

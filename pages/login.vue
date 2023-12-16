@@ -7,11 +7,11 @@
       </p>
       <VForm @submit="onLogin" class="form">
         <TextField
-          v-model="username"
-          v-bind="usernameAttr"
-          placeholder="Username"
-          name="username"
-          :error="errors.username"
+          v-model="email"
+          v-bind="emailAttr"
+          placeholder="Email"
+          name="email"
+          :error="errors.email"
         />
         <TextField
           type="password"
@@ -31,17 +31,22 @@
 </template>
 
 <script lang="ts" setup>
-import { computed, useForm, useRouter, login } from "#imports";
+import { computed, useForm, useRouter, login, definePageMeta } from "#imports";
 import * as yup from "yup";
+
+definePageMeta({
+  layout: false,
+});
+
 const router = useRouter();
 
 const { errors, defineField, meta } = useForm({
   validationSchema: yup.object({
-    username: yup.string().required(),
+    email: yup.string().required().email(),
     password: yup.string().required(),
   }),
 });
-const [username, usernameAttr] = defineField("username");
+const [email, emailAttr] = defineField("email");
 const [password, passwordAttr] = defineField("password");
 
 const isFormValid = computed(() => meta.value.valid && meta.value.touched);
@@ -54,8 +59,12 @@ const onLogin = () => {
 
 <style lang="scss" scoped>
 .login-page {
+  position: fixed;
+  top: 0;
+  left: 0;
   display: grid;
   place-items: center;
+  width: 100vw;
   height: 100vh;
   height: 100dvh;
   background-color: $color-surface-secondary;
@@ -74,6 +83,10 @@ const onLogin = () => {
 
   @include sp() {
     max-width: calc(100vw - 2 * $spacing-16);
+  }
+
+  > .instruction {
+    align-self: flex-start;
   }
 
   > .title {
