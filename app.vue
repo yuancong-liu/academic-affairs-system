@@ -1,11 +1,8 @@
 <template>
-  <div>
-    <Button @click="() => console.log('clicked!')">Click me!</Button>
-  </div>
+  <NuxtPage />
 </template>
 
 <script lang="ts" setup>
-import { Button } from '#components';
 </script>
 
 <style lang="scss" scoped>

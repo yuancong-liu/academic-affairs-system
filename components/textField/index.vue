@@ -3,7 +3,6 @@
     <input
       :type="type"
       :placeholder="placeholder"
-      :value="value"
       @input="$emit('input', $event.target.value)"
       class="text-field"
     />
@@ -28,26 +27,18 @@ const props = defineProps({
     type: String,
     default: "",
   },
-  /**
-   * The value of the input
-   * @default ""
-   */
-  value: {
-    type: String,
-    default: "",
-  },
 });
 </script>
 
 <style lang="scss" scoped>
 .input-wrapper {
-  border-bottom: $stroke-width-1 solid $main-gray;
+  border-bottom: $stroke-width-1 solid $color-text-secondary;
   padding: $spacing-8;
   width: 100%;
   transition: all 0.1s ease-in-out;
 
   &:focus-within {
-    border-bottom: $stroke-width-1 solid $main-black;
+    border-bottom: $stroke-width-1 solid $color-text-primary;
   }
 }
 
@@ -57,7 +48,7 @@ const props = defineProps({
   font-size: 16px;
 
   &::-webkit-input-placeholder {
-    color: $main-gray;
+    color: $color-text-secondary;
     padding-inline-start: $spacing-4;
   }
 }

@@ -46,13 +46,13 @@ const value = ref<string>("");
 
 <style lang="scss" scoped>
 .select-wrapper {
-  border-bottom: $stroke-width-1 solid $main-gray;
+  border-bottom: $stroke-width-1 solid $color-text-secondary;
   padding: $spacing-8;
   width: 100%;
   transition: all 0.1s ease-in-out;
 
   &:focus-within {
-    border-bottom: $stroke-width-1 solid $main-black;
+    border-bottom: $stroke-width-1 solid $color-text-primary;
   }
 
   > .select {
@@ -62,7 +62,7 @@ const value = ref<string>("");
   }
 
   > .select.-unselected {
-    color: $main-gray;
+    color: $color-text-secondary;
   }
 }
 </style>

@@ -39,19 +39,20 @@ const props = defineProps({
 .button {
   padding: $spacing-8 0;
   min-width: 256px;
-  color: $white;
+  width: 100%;
+  color: $color-surface-primary;
   border: none;
   font-weight: 600;
   font-size: 16px;
-  background-color: $surface-blue;
+  background-color: $color-surface-primary-main;
   border-radius: $border-radius-infinite;
-  border: $stroke-width-2 solid $surface-blue;
+  border: $stroke-width-2 solid $color-surface-primary-main;
   transition: all 0.1s ease-in-out;
 
   &:hover {
     cursor: pointer;
-    background-color: $white;
-    color: $surface-blue;
+    background-color: $color-surface-primary;
+    color: $color-surface-primary-main;
   }
 }
 </style>

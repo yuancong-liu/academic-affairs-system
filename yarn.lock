@@ -5558,7 +5558,7 @@ cssnano-preset-default@^6.0.1:
     postcss-normalize-timing-functions "^6.0.0"
     postcss-normalize-unicode "^6.0.0"
     postcss-normalize-url "^6.0.0"
-    postcss-normalize-whitespace "^6.0.0"
+    postcss-normalize-color-surfacespace "^6.0.0"
     postcss-ordered-values "^6.0.0"
     postcss-reduce-initial "^6.0.0"
     postcss-reduce-transforms "^6.0.0"
@@ -9956,9 +9956,9 @@ postcss-normalize-url@^6.0.0:
   dependencies:
     postcss-value-parser "^4.2.0"
 
-postcss-normalize-whitespace@^6.0.0:
+postcss-normalize-color-surfacespace@^6.0.0:
   version "6.0.0"
-  resolved "https://registry.yarnpkg.com/postcss-normalize-whitespace/-/postcss-normalize-whitespace-6.0.0.tgz#accb961caa42e25ca4179b60855b79b1f7129d4d"
+  resolved "https://registry.yarnpkg.com/postcss-normalize-color-surfacespace/-/postcss-normalize-color-surfacespace-6.0.0.tgz#accb961caa42e25ca4179b60855b79b1f7129d4d"
   integrity sha512-7cfE1AyLiK0+ZBG6FmLziJzqQCpTQY+8XjMhMAz8WSBSCsCNNUKujgIgjCAmDT3cJ+3zjTXFkoD15ZPsckArVw==
   dependencies:
     postcss-value-parser "^4.2.0"
