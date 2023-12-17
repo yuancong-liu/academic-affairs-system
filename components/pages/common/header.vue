@@ -11,7 +11,7 @@
 
 <script lang="ts" setup>
 type Props = {
-  loggedIn: boolean;
+  loggedIn?: boolean;
 }
 
 const props = withDefaults(defineProps<Props>(), {

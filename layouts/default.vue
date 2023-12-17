@@ -14,10 +14,11 @@
 </template>
 
 <script lang="ts" setup>
-import { useRoute } from "#imports";
+type Props = {
+  title: string;
+};
 
-const route = useRoute();
-const title = route.meta.title;
+const props = defineProps<Props>();
 </script>
 
 <style lang="scss" scoped>

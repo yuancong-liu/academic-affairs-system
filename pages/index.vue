@@ -1,13 +1,11 @@
 <template>
-  <div>
-    <p>This is home page</p>
-  </div>
+  <NuxtLayout :title="title">
+    <div>
+      <p>This is home page</p>
+    </div>
+  </NuxtLayout>
 </template>
 
 <script lang="ts" setup>
-import { definePageMeta } from "#imports";
-
-definePageMeta({
-  title: "Home",
-});
+const title = "Home";
 </script>

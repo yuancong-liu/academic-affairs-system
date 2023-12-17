@@ -9,10 +9,10 @@
 </template>
 
 <script lang="ts" setup>
-import { useRoute } from "#imports";
-
-const route = useRoute();
-const title = route.meta.title;
+type Props = {
+  title?: string;
+};
+const props = defineProps<Props>();
 </script>
 
 <style lang="scss" scoped>
@@ -24,6 +24,7 @@ const title = route.meta.title;
   > .content {
     margin-top: 56px;
     max-width: 700px;
+    padding: $spacing-16;
     width: 100%;
     margin: 56px auto 0;
   }

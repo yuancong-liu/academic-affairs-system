@@ -5,13 +5,12 @@
     :class="[{ '-disabled': disabled }, `-${variant}`]"
     :disabled="disabled"
   >
-    <slot>{{ label }}</slot>
+    <slot></slot>
   </button>
 </template>
 
 <script lang="ts" setup>
 type Props = {
-  label: string;
   type?: string;
   disabled?: boolean;
   variant?: "filled" | "outlined" | "text";

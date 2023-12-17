@@ -15,29 +15,18 @@
 </template>
 
 <script lang="ts" setup>
-const props = defineProps({
-  /**
-   * The type of the input
-   * @default text
-   */
-  type: {
-    type: String,
-    default: "text",
-  },
-  /**
-   * The placeholder of the input
-   * @default ""
-   */
-  placeholder: {
-    type: String,
-    default: "",
-  },
-  modelValue: String,
-  error: String,
-  disabled: {
-    type: Boolean,
-    default: false,
-  },
+type Props = {
+  type?: string;
+  placeholder?: string;
+  modelValue?: string;
+  error?: string;
+  disabled?: boolean;
+};
+
+const props = withDefaults(defineProps<Props>(), {
+  type: "text",
+  placeholder: "",
+  disabled: false,
 });
 </script>
 

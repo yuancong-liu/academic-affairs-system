@@ -1,38 +1,42 @@
 <template>
-  <main class="login-page">
-    <div class="login-panel">
-      <h2 class="title">LOGIN</h2>
-      <p class="instruction">
-        This is a fake login page so just type something and hit the button!
-      </p>
-      <VForm @submit="onLogin" class="form">
-        <TextField
-          v-model="email"
-          v-bind="emailAttr"
-          placeholder="Email"
-          name="email"
-          :error="errors.email"
-        />
-        <TextField
-          type="password"
-          v-model="password"
-          v-bind="passwordAttr"
-          placeholder="Password"
-          name="password"
-          :error="errors.password"
-        />
-        <Button type="submit" :disabled="!isFormValid">LOGIN</Button>
-        <div class="reset-link">
-          <NuxtLink class="link" to="/reset">Forgot password?</NuxtLink>
-        </div>
-      </VForm>
-    </div>
-  </main>
+  <NuxtLayout :title="title">
+    <main class="login-page">
+      <div class="login-panel">
+        <h2 class="title">LOGIN</h2>
+        <p class="instruction">
+          This is a fake login page so just type something and hit the button!
+        </p>
+        <VForm @submit="onLogin" class="form">
+          <TextField
+            v-model="email"
+            v-bind="emailAttr"
+            placeholder="Email"
+            name="email"
+            :error="errors.email"
+          />
+          <TextField
+            type="password"
+            v-model="password"
+            v-bind="passwordAttr"
+            placeholder="Password"
+            name="password"
+            :error="errors.password"
+          />
+          <Button type="submit" :disabled="!isFormValid">LOGIN</Button>
+          <div class="reset-link">
+            <NuxtLink class="link" to="/reset">Forgot password?</NuxtLink>
+          </div>
+        </VForm>
+      </div>
+    </main>
+  </NuxtLayout>
 </template>
 
 <script lang="ts" setup>
 import { computed, useForm, useRouter, login, definePageMeta } from "#imports";
 import * as yup from "yup";
+
+const title = "Login";
 
 definePageMeta({
   layout: false,

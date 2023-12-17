@@ -27,23 +27,13 @@ type Option = {
   label: string;
 };
 
-const props = defineProps<{
-  /**
-   * The name of the select
-   * @default ""
-   */
+type Props = {
   name: string;
-  /**
-   * The options of the select
-   * @default []
-   */
   options: Option[];
-  /**
-   * The disabled state of the select
-   * @default false
-   */
   disabled?: boolean;
-}>();
+};
+
+const props = defineProps<Props>();
 
 const value = ref<string>("");
 </script>
