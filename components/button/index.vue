@@ -44,8 +44,8 @@ const props = withDefaults(defineProps<Props>(), {
 
   &:disabled {
     cursor: not-allowed;
-    background-color: $color-surface-secondary;
-    border-color: $color-surface-secondary;
+    background-color: $color-surface-disabled;
+    border-color: $color-surface-disabled;
   }
 
   &.-outlined {
