@@ -14,12 +14,12 @@
       <PagesMenuItem to="/results" icon="orders">
         RESULTS
       </PagesMenuItem>
-      <PagesMenuItem to="/users" icon="users">
+      <PagesMenuItem to="/messages" icon="messages">
         MESSAGES
       </PagesMenuItem>
     </div>
     <div class="lower-part">
-      <PagesMenuItem to="/me" icon="settings">
+      <PagesMenuItem to="/me" icon="me">
         ME
       </PagesMenuItem>
       <Button @click="logout">LOGOUT</Button>

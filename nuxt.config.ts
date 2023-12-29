@@ -1,10 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  modules: [
-    "@storybook-vue/nuxt-storybook",
-    "@vee-validate/nuxt",
-  ],
+  modules: ["@storybook-vue/nuxt-storybook", "@vee-validate/nuxt"],
   middleware: ["auth"],
   veeValidate: {
     autoImports: true,
@@ -34,7 +31,7 @@ export default defineNuxtConfig({
     css: {
       preprocessorOptions: {
         scss: {
-          additionalData: `@import "~/assets/scss/variables.scss"; @import "~/assets/scss/mixins.scss";` ,
+          additionalData: `@import "~/assets/scss/variables.scss"; @import "~/assets/scss/mixins.scss";`,
         },
       },
     },
