@@ -14,6 +14,7 @@
   "devDependencies": {
     "@nuxt/devtools": "latest",
     "@nuxtjs/storybook": "7.0.0",
+    "@nuxtjs/tailwindcss": "^6.11.4",
     "@storybook-vue/nuxt": "0.2.0",
     "@storybook-vue/nuxt-storybook": "^0.0.1-latest.7",
     "@storybook/addon-docs": "^7.6.6",

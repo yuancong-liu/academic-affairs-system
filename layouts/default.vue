@@ -6,7 +6,7 @@
     <main class="right-side">
       <PagesCommonHeader />
       <div class="page-content">
-        <h1 class="title">{{ title }}</h1>
+        <h1 class="text-5xl font-bold leading-normal">{{ title }}</h1>
         <slot></slot>
       </div>
     </main>
@@ -38,7 +38,6 @@ const props = defineProps<Props>();
   }
 }
 .right-side {
-  margin-top: 56px;
   width: 100%;
 }
 

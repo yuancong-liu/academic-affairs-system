@@ -1,9 +1,9 @@
 <template>
-  <header class="header-wrapper">
+  <header class="sticky top-0 flex h-14 items-center justify-between border-b-gray-400 bg-white px-4 py-2">
     <div class="left-side">
       <div class="logo">LOGO</div>
     </div>
-    <div class="right-side" :class="!loggedIn && `-non-logged-in`">
+    <div class="right-side shrink-0" :class="!loggedIn && `hidden`">
       <Button variant="text" @click="logout">logout</Button>
     </div>
   </header>
@@ -12,7 +12,7 @@
 <script lang="ts" setup>
 type Props = {
   loggedIn?: boolean;
-}
+};
 
 const props = withDefaults(defineProps<Props>(), {
   loggedIn: true,
@@ -20,38 +20,16 @@ const props = withDefaults(defineProps<Props>(), {
 </script>
 
 <style lang="scss" scoped>
-.header-wrapper {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 56px;
-  background-color: $color-surface-primary;
-  padding: $spacing-8 $spacing-16;
-  border-bottom: $stroke-width-1 solid $color-surface-secondary;
-}
+.logo {
+  display: none;
 
-.left-side {
-  // other styles
-  > .logo {
-    display: none;
-
-    @include sp() {
-      display: block;
-    }
+  @include sp() {
+    display: block;
   }
 }
 
 .right-side {
-  flex-shrink: 0;
-
   @include pc() {
-    display: none;
-  }
-
-  &.-non-logged-in {
     display: none;
   }
 }

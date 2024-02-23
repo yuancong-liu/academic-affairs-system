@@ -1,5 +1,8 @@
 @import "reset-css";
 @import url("https://fonts.googleapis.com/css2?family=Jost:wght@400;600&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 *,
 *::before,
@@ -35,7 +38,6 @@ textarea {
 button {
   padding: 0;
   background: none;
-  border: none;
 }
 
 button:focus,

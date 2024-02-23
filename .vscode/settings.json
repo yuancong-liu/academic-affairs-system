@@ -1,3 +1,7 @@
 {
-  "cSpell.words": ["nuxt"]
+  "cSpell.words": ["nuxt", "nuxtjs", "tailwindcss"],
+  "tailwindCSS.experimental.classRegex": ["tw`(.*?)`", "tw\\('(.*?)'\\)"],
+  "files.associations": {
+    "*.css": "tailwindcss"
+  }
 }

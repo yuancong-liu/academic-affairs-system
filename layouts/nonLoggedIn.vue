@@ -1,8 +1,8 @@
 <template>
-  <div class="page-wrapper">
+  <div class="flex min-h-screen flex-col bg-gray-100">
     <PagesCommonHeader :loggedIn="false" />
-    <main class="content">
-      <h1 class="title">{{ title }}</h1>
+    <main class="mx-auto mb-0 w-full max-w-2xl p-4">
+      <h1 class="text-5xl font-bold leading-normal">{{ title }}</h1>
       <slot></slot>
     </main>
   </div>
@@ -15,24 +15,4 @@ type Props = {
 const props = defineProps<Props>();
 </script>
 
-<style lang="scss" scoped>
-.page-wrapper {
-  display: flex;
-  min-height: 100vh;
-  background-color: $color-surface-secondary;
-
-  > .content {
-    margin-top: 56px;
-    max-width: 700px;
-    padding: $spacing-16;
-    width: 100%;
-    margin: 56px auto 0;
-  }
-
-  > .content > .title {
-    margin-bottom: $spacing-16;
-    font-size: $font-size-page-title;
-    font-weight: 600;
-  }
-}
-</style>
+<style lang="scss" scoped></style>

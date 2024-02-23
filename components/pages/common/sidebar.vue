@@ -22,7 +22,7 @@
       <PagesMenuItem to="/me" icon="me">
         ME
       </PagesMenuItem>
-      <Button @click="logout">LOGOUT</Button>
+      <Button @click="logout" variant="outlined">LOGOUT</Button>
     </div>
   </div>
 </template>

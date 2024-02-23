@@ -1,18 +1,11 @@
 <template>
-  <div class="logo-wrapper">
+  <div
+    class="flex h-14 items-center justify-center border border-b-gray-400 font-bold"
+  >
     <p>Logo</p>
   </div>
 </template>
 
 <script lang="ts" setup></script>
 
-<style lang="scss" scoped>
-.logo-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 56px;
-  font-weight: 600;
-  border-bottom: $stroke-width-1 solid $color-surface-secondary;
-}
-</style>
+<style lang="scss" scoped></style>

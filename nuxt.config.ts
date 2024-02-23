@@ -1,7 +1,11 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  modules: ["@storybook-vue/nuxt-storybook", "@vee-validate/nuxt"],
+  modules: [
+    "@storybook-vue/nuxt-storybook",
+    "@vee-validate/nuxt",
+    "@nuxtjs/tailwindcss",
+  ],
   middleware: ["auth"],
   veeValidate: {
     autoImports: true,
@@ -23,7 +27,11 @@ export default defineNuxtConfig({
       extensions: ["vue"],
     },
   ],
-  css: ["~/assets/scss/base.scss"],
+  tailwindcss: {
+    editorSupport: true,
+    cssPath: "~/assets/scss/tailwind.scss",
+    configPath: "tailwind.config",
+  },
   experimental: {
     inlineSSRStyles: false,
   },
