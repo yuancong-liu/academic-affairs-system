@@ -18,3 +18,15 @@ export default meta;
 type Story = StoryObj<typeof Select>;
 
 export const Default: Story = {};
+
+export const Disabled: Story = {
+  args: {
+    disabled: true,
+  },
+};
+
+export const Error: Story = {
+  args: {
+    error: 'Text is required',
+  },
+};

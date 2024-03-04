@@ -1,16 +1,16 @@
 <template>
-  <div class="input-wrapper">
+  <div class="w-full flex flex-col gap-1">
     <input
-      class="text-field"
+      class="w-full border-b p-2 border-solid border-gray-400 transition-all focus-within:border-gray-600 placeholder:text-gray-400 placeholder:ps-1"
       :type="type"
       :placeholder="placeholder"
       :value="modelValue"
-      :class="{ '-error': !!error, '-disabled': disabled }"
+      :class="{ '!border-red-600': !!error, 'cursor-not-allowed bg-gray-100': disabled }"
       :disabled="disabled"
       @input="$emit('update:modelValue', $event.target.value)"
       @blur="$emit('blur')"
     />
-    <p class="error-message">{{ error ?? "&zwnj;" }}</p>
+    <p class="text-red-600 leading-none text-end text-sm">{{ error ?? "&zwnj;" }}</p>
   </div>
 </template>
 
@@ -29,44 +29,3 @@ const props = withDefaults(defineProps<Props>(), {
   disabled: false,
 });
 </script>
-
-<style lang="scss" scoped>
-.input-wrapper {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: $spacing-4;
-}
-
-.text-field {
-  border: 0;
-  border-bottom: $stroke-width-1 solid $color-text-secondary;
-  padding: $spacing-8;
-  width: 100%;
-  font-size: $font-size-16;
-
-  &:focus {
-    border-bottom: $stroke-width-1 solid $color-text-primary;
-  }
-
-  &.-error {
-    border-bottom: $stroke-width-1 solid $color-error;
-  }
-
-  &.-disabled {
-    cursor: not-allowed;
-  }
-
-  &::-webkit-input-placeholder {
-    color: $color-text-secondary;
-    padding-inline-start: $spacing-4;
-  }
-}
-
-.error-message {
-  color: $color-error;
-  font-size: $font-size-14;
-  line-height: 1;
-  text-align: end;
-}
-</style>

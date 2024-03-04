@@ -1,7 +1,7 @@
 <template>
   <button
     @click="$emit('click')"
-    class="rounded-full font-bold hover:font-semibold disabled:cursor-not-allowed"
+    class="rounded-full font-semibold disabled:cursor-not-allowed"
     :class="getVariantClassNames"
     :disabled="disabled"
   >
@@ -29,7 +29,7 @@ const getVariantClassNames = computed(() => {
     case "text":
       return tw`h-fit w-fit border-0 bg-transparent px-4 py-0 text-blue-500 hover:underline disabled:text-gray-400 disabled:hover:no-underline`;
     case "outlined":
-      return tw`w-full border-2 border-blue-500 px-4 py-2 text-blue-500 disabled:border-gray-400 disabled:text-gray-400 `;
+      return tw`w-full border-2 border-blue-500 px-4 py-2 text-blue-500 hover:underline disabled:border-gray-400 disabled:text-gray-400 `;
     default:
       return "";
   }

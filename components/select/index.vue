@@ -1,12 +1,12 @@
 <template>
-  <div class="select-wrapper">
+  <div class="w-full flex flex-col gap-1">
     <select
       v-model="value"
-      class="select"
+      class="border-0 p-2  w-full bg-transparent  border-b border-solid border-b-gray-400 transition-all focus:border-b-gray-600"
       @input="$emit('input', $event.target.value)"
       :name="name"
       :disabled="disabled"
-      :class="{ '-disabled': disabled, '-unselected': !value }"
+      :class="{ 'text-gray-400': !value, 'cursor-not-allowed': disabled, '!border-red-600': !!error}"
     >
       <option value="" disabled selected hidden>Select an option</option>
       <option
@@ -18,6 +18,7 @@
         {{ option.label }}
       </option>
     </select>
+    <p class="text-red-600 leading-none text-end text-sm">{{ error ?? "&zwnj;" }}</p>
   </div>
 </template>
 
@@ -31,32 +32,10 @@ type Props = {
   name: string;
   options: Option[];
   disabled?: boolean;
+  error?: string;
 };
 
 const props = defineProps<Props>();
 
 const value = ref<string>("");
 </script>
-
-<style lang="scss" scoped>
-.select-wrapper {
-  border-bottom: $stroke-width-1 solid $color-text-secondary;
-  padding: $spacing-8;
-  width: 100%;
-  transition: all 0.1s ease-in-out;
-
-  &:focus-within {
-    border-bottom: $stroke-width-1 solid $color-text-primary;
-  }
-
-  > .select {
-    border: 0;
-    width: 100%;
-    font-size: $font-size-16;
-  }
-
-  > .select.-unselected {
-    color: $color-text-secondary;
-  }
-}
-</style>
