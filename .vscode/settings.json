@@ -1,5 +1,5 @@
 {
-  "cSpell.words": ["nuxt", "nuxtjs", "tailwindcss"],
+  "cSpell.words": ["issuu", "nuxt", "nuxtjs", "tailwindcss"],
   "tailwindCSS.experimental.classRegex": ["tw`(.*?)`", "tw\\('(.*?)'\\)"],
   "files.associations": {
     "*.css": "tailwindcss"
