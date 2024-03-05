@@ -54,7 +54,7 @@
   },
   "resolutions": {
     "stylelint-config-recommended-scss": "^13.1.0",
-    "string-width": "4.2.3"
+    "string-width": "^5.1.2"
   },
   "dependencies": {
     "@vee-validate/nuxt": "^4.12.2",
