@@ -10,5 +10,3 @@
 <script lang="ts" setup>
 const title = "Reset Password";
 </script>
-
-<style lang="scss" scoped></style>

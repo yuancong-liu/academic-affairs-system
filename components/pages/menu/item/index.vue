@@ -1,5 +1,5 @@
 <template>
-  <NuxtLink class="menu-item" :to="to">
+  <NuxtLink class="p-4" :to="to">
     <slot></slot>
   </NuxtLink>
 </template>
@@ -14,14 +14,9 @@ const props = defineProps<Props>();
 </script>
 
 <style lang="scss" scoped>
-.menu-item {
-  color: $color-text-primary;
-  padding: $spacing-16 $spacing-16;
-}
-
 .router-link-active {
-  color: $color-text-active;
-  background-color: $color-surface-active;
-  font-weight: 600;
+  @apply text-white;
+  @apply bg-slate-400;
+  @apply font-bold;
 }
 </style>

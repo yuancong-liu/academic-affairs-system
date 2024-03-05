@@ -1,11 +1,11 @@
 <template>
-  <div class="page-wrapper">
-    <div class="left-side">
+  <div class="flex min-h-screen bg-gray-50">
+    <div class="hidden h-full w-64 flex-shrink-0 md:block">
       <PagesCommonSidebar />
     </div>
-    <main class="right-side">
+    <main class="w-full">
       <PagesCommonHeader />
-      <div class="page-content">
+      <div class="p-4">
         <h1 class="text-5xl font-bold leading-normal">{{ title }}</h1>
         <slot></slot>
       </div>
@@ -20,34 +20,3 @@ type Props = {
 
 const props = defineProps<Props>();
 </script>
-
-<style lang="scss" scoped>
-.page-wrapper {
-  display: flex;
-  min-height: 100vh;
-  background-color: $color-surface-secondary;
-}
-
-.left-side {
-  height: 100%;
-  flex-shrink: 0;
-  width: 256px;
-
-  @include sp() {
-    display: none;
-  }
-}
-.right-side {
-  width: 100%;
-}
-
-.page-content {
-  padding: $spacing-16;
-
-  > .title {
-    margin-bottom: $spacing-16;
-    font-size: $font-size-page-title;
-    font-weight: 600;
-  }
-}
-</style>

@@ -1,27 +1,31 @@
 <template>
   <div class="flex w-full flex-col gap-1">
-    <select
-      v-model="value"
-      class="w-full border-0 border-b border-solid border-b-gray-400 bg-transparent p-2 transition-all focus:border-b-gray-600"
-      @input="$emit('input', $event.target.value)"
-      :name="name"
-      :disabled="disabled"
+    <div
+      class="w-full border-b border-solid border-b-gray-400 pr-1 transition-all focus-within:border-b-gray-600"
       :class="{
-        'text-gray-400': !value,
-        'cursor-not-allowed': disabled,
         '!border-red-600': !!error,
+        'cursor-not-allowed bg-gray-100': disabled,
       }"
     >
-      <option value="" disabled selected hidden>Select an option</option>
-      <option
-        v-for="option in options"
-        :key="option.value"
-        :value="option.value"
-        class="option"
+      <select
+        v-model="value"
+        class="w-full border-0 bg-transparent p-2 pr-0 focus:outline-none"
+        @input="$emit('input', $event.target.value)"
+        :name="name"
+        :disabled="disabled"
+        :class="{ 'text-gray-400': !value, 'cursor-not-allowed': disabled }"
       >
-        {{ option.label }}
-      </option>
-    </select>
+        <option value="" disabled selected hidden>Select an option</option>
+        <option
+          v-for="option in options"
+          :key="option.value"
+          :value="option.value"
+          class="option"
+        >
+          {{ option.label }}
+        </option>
+      </select>
+    </div>
     <p class="text-end text-sm leading-none text-red-600">
       {{ error ?? "&zwnj;" }}
     </p>

@@ -3,13 +3,11 @@
   "plugins": ["stylelint-order"],
   "overrides": [
     {
-      "files": ["*.scss", "**/*.scss"],
-      "extends": ["stylelint-config-recommended-scss"]
+      "files": ["*.scss", "**/*.scss"]
     },
     {
       "files": ["*.vue", "**/*.vue"],
       "extends": [
-        "stylelint-config-recommended-scss",
         "stylelint-config-recommended-vue"
       ]
     }

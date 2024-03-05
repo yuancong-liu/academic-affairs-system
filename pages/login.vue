@@ -1,20 +1,24 @@
 <template>
   <NuxtLayout :title="title">
-    <main class="login-page">
-      <div class="login-panel">
-        <h2 class="title">LOGIN</h2>
-        <p class="instruction">
+    <main
+      class="fixed left-0 top-0 grid h-[100dvh] w-screen place-items-center bg-gray-100 p-4 md:p-0"
+    >
+      <div
+        class="flex w-full flex-col items-center gap-4 rounded bg-white p-8 md:max-w-sm"
+      >
+        <h2 class="w-full text-start text-3xl font-bold">LOGIN</h2>
+        <p class="self-start">
           This is a fake login page so just type something and hit the button!
         </p>
-        <VForm @submit="onLogin" class="form">
-          <TextField
+        <VForm @submit="onLogin" class="flex w-full flex-col gap-2">
+          <Input
             v-model="email"
             v-bind="emailAttr"
             placeholder="Email"
             name="email"
             :error="errors.email"
           />
-          <TextField
+          <Input
             type="password"
             v-model="password"
             v-bind="passwordAttr"
@@ -23,8 +27,10 @@
             :error="errors.password"
           />
           <Button type="submit" :disabled="!isFormValid">LOGIN</Button>
-          <div class="reset-link">
-            <NuxtLink class="link" to="/reset">Forgot password?</NuxtLink>
+          <div class="flex w-full justify-end">
+            <NuxtLink class="text-slate-500 hover:text-slate-800 transition" to="/reset"
+              >Forgot password?</NuxtLink
+            >
           </div>
         </VForm>
       </div>
@@ -60,68 +66,3 @@ const onLogin = () => {
   router.push("/");
 };
 </script>
-
-<style lang="scss" scoped>
-.login-page {
-  position: fixed;
-  top: 0;
-  left: 0;
-  display: grid;
-  place-items: center;
-  width: 100vw;
-  height: 100vh;
-  height: 100dvh;
-  background-color: $color-surface-secondary;
-}
-
-.login-panel {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: $spacing-16;
-  width: 100%;
-  max-width: 400px;
-  padding: $spacing-32;
-  border-radius: $border-radius-4;
-  background-color: $color-surface-primary;
-
-  @include sp() {
-    max-width: calc(100vw - 2 * $spacing-16);
-  }
-
-  > .instruction {
-    align-self: flex-start;
-  }
-
-  > .title {
-    font-size: $font-size-32;
-    font-weight: 600;
-    width: 100%;
-    text-align: start;
-  }
-
-  > .form {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: $spacing-8;
-  }
-}
-.reset-link {
-  width: 100%;
-  display: flex;
-  justify-content: flex-end;
-  font-size: $font-size-16;
-  color: $color-text-secondary;
-
-  > .link {
-    color: $color-text-secondary;
-    text-decoration: none;
-    transition: all 0.1s ease-in-out;
-
-    &:hover {
-      color: $color-text-primary;
-    }
-  }
-}
-</style>

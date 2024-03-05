@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from "@storybook/vue3";
-import TextField from "./index.vue";
+import Input from "./index.vue";
 
-const meta: Meta<typeof TextField> = {
-  title: "Form/Text Field",
-  component: TextField,
+const meta: Meta<typeof Input> = {
+  title: "Form/Input",
+  component: Input,
   args: {
     type: "text",
     placeholder: "Placeholder",
@@ -11,7 +11,7 @@ const meta: Meta<typeof TextField> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof TextField>;
+type Story = StoryObj<typeof Input>;
 
 export const Primary: Story = {};
 

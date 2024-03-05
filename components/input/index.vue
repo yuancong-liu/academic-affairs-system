@@ -1,7 +1,7 @@
 <template>
   <div class="flex w-full flex-col gap-1">
     <input
-      class="w-full border-b border-solid border-gray-400 p-2 transition-all placeholder:ps-1 placeholder:text-gray-400 focus-within:border-gray-600"
+      class="w-full border-b border-solid border-gray-400 p-2 transition-[border] placeholder:ps-1 placeholder:text-gray-400 focus-within:border-gray-600 focus:outline-none"
       :type="type"
       :placeholder="placeholder"
       :value="modelValue"
@@ -20,7 +20,7 @@
 </template>
 
 <script lang="ts" setup>
-import { defineProps, withDefaults } from 'vue';
+import { defineProps, withDefaults } from "vue";
 
 type Props = {
   type?: string;

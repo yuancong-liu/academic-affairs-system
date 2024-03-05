@@ -10,6 +10,8 @@
 </template>
 
 <script lang="ts" setup>
+import { withDefaults } from 'vue';
+
 type Props = {
   type?: string;
   disabled?: boolean;
@@ -35,5 +37,3 @@ const getVariantClassNames = computed(() => {
   }
 });
 </script>
-
-<style lang="scss" scoped></style>
