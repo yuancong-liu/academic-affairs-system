@@ -1,12 +1,16 @@
 <template>
-  <div class="w-full flex flex-col gap-1">
+  <div class="flex w-full flex-col gap-1">
     <select
       v-model="value"
-      class="border-0 p-2  w-full bg-transparent  border-b border-solid border-b-gray-400 transition-all focus:border-b-gray-600"
+      class="w-full border-0 border-b border-solid border-b-gray-400 bg-transparent p-2 transition-all focus:border-b-gray-600"
       @input="$emit('input', $event.target.value)"
       :name="name"
       :disabled="disabled"
-      :class="{ 'text-gray-400': !value, 'cursor-not-allowed': disabled, '!border-red-600': !!error}"
+      :class="{
+        'text-gray-400': !value,
+        'cursor-not-allowed': disabled,
+        '!border-red-600': !!error,
+      }"
     >
       <option value="" disabled selected hidden>Select an option</option>
       <option
@@ -18,7 +22,9 @@
         {{ option.label }}
       </option>
     </select>
-    <p class="text-red-600 leading-none text-end text-sm">{{ error ?? "&zwnj;" }}</p>
+    <p class="text-end text-sm leading-none text-red-600">
+      {{ error ?? "&zwnj;" }}
+    </p>
   </div>
 </template>
 

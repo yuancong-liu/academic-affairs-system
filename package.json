@@ -53,7 +53,8 @@
     "vue-tsc": "^1.8.25"
   },
   "resolutions": {
-    "stylelint-config-recommended-scss": "^13.1.0"
+    "stylelint-config-recommended-scss": "^13.1.0",
+    "string-width": "4.2.3"
   },
   "dependencies": {
     "@vee-validate/nuxt": "^4.12.2",
