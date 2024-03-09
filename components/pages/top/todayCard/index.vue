@@ -34,7 +34,7 @@
               class="w-fit text-xl font-bold"
               :class="
                 currentOffset >= classInfo.startAt &&
-                currentOffset < classInfo.endAt &&
+                currentOffset <= classInfo.endAt &&
                 `relative z-[1] after:absolute after:bottom-0 after:left-2 after:z-[-1] after:h-3 after:w-full after:rounded-full after:bg-blue-500 after:shadow-lg after:shadow-blue-400 after:content-['']`
               "
               >{{ classInfo.subject }}</span
@@ -43,7 +43,7 @@
           </div>
           <div
             v-if="classInfo.more"
-            class="flex h-full flex-col border-l border-solid border-slate-300 py-4 pl-8 text-end text-slate-500"
+            class="flex flex-col border-l border-solid border-slate-300 pl-8 text-end text-slate-500"
           >
             <span>{{ classInfo.more }}</span>
           </div>
