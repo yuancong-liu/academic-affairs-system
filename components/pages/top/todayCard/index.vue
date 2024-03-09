@@ -35,7 +35,7 @@
               :class="
                 currentOffset >= classInfo.startAt &&
                 currentOffset <= classInfo.endAt &&
-                `relative z-[1] after:absolute after:bottom-0 after:left-2 after:z-[-1] after:h-3 after:w-full after:rounded-full after:bg-blue-500 after:shadow-lg after:shadow-blue-400 after:content-['']`
+                `relative z-[1] after:absolute after:bottom-0 after:left-2 after:z-[-1] after:h-3 after:w-full after:rounded-full after:bg-blue-400 after:shadow-lg after:shadow-blue-400 after:content-['']`
               "
               >{{ classInfo.subject }}</span
             >
