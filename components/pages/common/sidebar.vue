@@ -5,6 +5,8 @@
     <PagesCommonLogo />
     <div class="flex w-full flex-col">
       <PagesMenuItem to="/" icon="home"> HOME </PagesMenuItem>
+      <PagesMenuItem to="/info" icon="home"> INFO  </PagesMenuItem>
+      <PagesMenuItem to="/exams" icon="menu"> EXAMS</PagesMenuItem>
       <PagesMenuItem to="/courses" icon="menu"> COURSES </PagesMenuItem>
       <PagesMenuItem to="/timetable" icon="orders"> TIMETABLE </PagesMenuItem>
       <PagesMenuItem to="/results" icon="orders"> RESULTS </PagesMenuItem>

@@ -5,7 +5,7 @@
     </div>
     <main class="w-full">
       <PagesCommonHeader />
-      <div class="p-4">
+      <div class="p-4 flex flex-col gap-4">
         <h1 class="text-5xl font-bold leading-normal">{{ title }}</h1>
         <slot></slot>
       </div>

@@ -6,7 +6,7 @@
       <div
         class="flex w-full flex-col items-center gap-4 rounded bg-white p-8 md:max-w-sm"
       >
-        <h2 class="w-full text-start text-3xl font-bold">LOGIN</h2>
+        <h2 class="w-full text-start text-3xl font-bold">LOGIN</h2>                              
         <p class="self-start">
           This is a fake login page so just type something and hit the button!
         </p>
