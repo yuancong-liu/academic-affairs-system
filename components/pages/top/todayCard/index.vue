@@ -6,13 +6,13 @@
       <div class="flex items-center justify-between">
         <div class="flex flex-col">
           <span>1st week</span>
-          <span>3 JAN 2024</span>
+          <span class="text-xl font-semibold">3 JAN 2024</span>
           <span>FRI</span>
         </div>
         <div class="w-20 self-stretch bg-gray-400"></div>
         <div class="flex flex-col">
           <span>Cloudy</span>
-          <span>-3°C</span>
+          <span class="text-xl font-semibold">-3°C</span>
         </div>
       </div>
 
@@ -35,7 +35,7 @@
               :class="
                 currentOffset >= classInfo.startAt &&
                 currentOffset <= classInfo.endAt &&
-                `relative z-[1] after:absolute after:bottom-0 after:left-2 after:z-[-1] after:h-3 after:w-full after:rounded-full after:bg-blue-400 after:shadow-lg after:shadow-blue-400 after:content-['']`
+                tw`relative z-[1] after:absolute after:bottom-0 after:left-2 after:z-[-1] after:h-3 after:w-full after:rounded-full after:bg-blue-400 after:shadow-lg after:shadow-blue-400 after:content-['']`
               "
               >{{ classInfo.subject }}</span
             >
@@ -49,6 +49,10 @@
           </div>
         </li>
       </ul>
+
+      <div class="flex justify-end">
+        <Button>ALL CLASSES</Button>
+      </div>
     </div>
   </Container>
 </template>
@@ -74,7 +78,7 @@ const MOCK: ClassInfo[] = [
   },
   {
     teacher: "Mr. Smith",
-    subject: "Calculus",
+    subject: "Computer Organizations",
     startAt: 3,
     endAt: 4,
     room: "A-101",
@@ -82,7 +86,7 @@ const MOCK: ClassInfo[] = [
   },
   {
     teacher: "Mr. Smith",
-    subject: "Calculus",
+    subject: "Grammars",
     startAt: 5,
     endAt: 6,
     room: "A-101",
@@ -97,5 +101,5 @@ const MOCK: ClassInfo[] = [
   },
 ];
 
-const currentOffset = new Date().getHours() - 14;
+const currentOffset = new Date().getHours() - 4;
 </script>
