@@ -32,8 +32,8 @@ export default defineNuxtConfig({
     cssPath: "~/assets/scss/tailwind.scss",
     configPath: "tailwind.config",
   },
-  experimental: {
-    inlineSSRStyles: false,
+  features: {
+    inlineStyles: false,
   },
   vite: {
     css: {
